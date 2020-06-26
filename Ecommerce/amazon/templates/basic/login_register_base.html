@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+    <title>Hello, world!</title>
+    {% include 'basic/css.html'%}
+  </head>
+  <body>
+    {% include 'basic/navbar_login_register.html' %}
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'basic/js.html'%}
+  </body>
+</html>

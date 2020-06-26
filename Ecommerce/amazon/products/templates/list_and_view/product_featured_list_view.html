@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product_list</title>
+</head>
+<body>
+    <div class="container">
+        <h3>List of Products</h3>
+
+
+        {% for object in object_list %}
+        {{ object.title }}<br>
+        {{ object.description }}<br>
+        {{ object.price }}<br>
+        {{ object.image }}<br>
+            {% if Product.image.url %}
+             <img src="{{ object.image.url }}" class="img-fluid">
+            {% else %}
+            <p>No image</p>
+            {% endif %}
+        {% endfor %}
+
+    </div>
+</body>
+</html>

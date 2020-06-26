@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CBV detail</title>
+</head>
+<body>
+    {{ object.title }}<br>
+    {{ object.description }}<br>
+    {{ object.price }}<br>
+    {% if Product.image.url %}
+     <img src="{{ object.image.url }}" class="img-fluid">
+    {% else %}
+    <p>No image</p>
+    {% endif %}
+</body>
+</html>

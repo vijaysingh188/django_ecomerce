@@ -1,0 +1,27 @@
+{% extends 'basic/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="text-center">
+        <h1>Hello, world!</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="column">
+            <h4>FILL UP THE FORM</h4>
+            <div >
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-primary" value="submit">Submit</button>
+            </form>
+            </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+{% endblock %}

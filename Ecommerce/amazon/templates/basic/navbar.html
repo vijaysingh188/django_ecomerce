@@ -1,0 +1,46 @@
+{% url 'cart:home' as cart_url %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'home' %}">{% if brand_name %} {{ brand_name }} {% else %} NAVBAR {% endif %}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'products:List' %}" tabindex="-1" aria-disabled="true">Products</a>
+          {% if request.user.is_authenticated %}
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}" tabindex="-1" aria-disabled="true">Logout</a>
+      </li>
+        {% else %}
+        <li class="nav-item">
+        <a class="nav-link " href="{% url 'login' %}" tabindex="-1" aria-disabled="true">Login</a>
+
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}" tabindex="-1" aria-disabled="true">SignUp</a>
+      </li>
+        {% endif %}
+      <li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{ cart_url }}"  tabindex="-1" aria-disabled="true">{{request.session.cart_items}}</span> <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+    <form method="get" action="{% url 'search:query' %}"  class="form-inline my-2 my-lg-0">
+      <div class="input-group">
+          <input class="form-control mr-sm-2" type="text" name='q' value="{{ request.GET.q }}" placeholder="Search">
+          <span class="input-group-btn">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </span>
+      </div>
+    </form>
+  </div>
+</nav>
