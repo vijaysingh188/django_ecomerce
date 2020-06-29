@@ -4,9 +4,26 @@ from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.shortcuts import render
 from django.http import Http404,HttpResponse,HttpResponseRedirect
-from .forms import LoginForm,RegisterForm
+from .forms import LoginForm,RegisterForm,GuestEmailForm
 from django.utils.http import is_safe_url
 # from django.contrib.auth.views import logout
+from .models import GuestEmail
+
+
+def guest_register_view(request):
+    form = GuestEmailForm(request.POST or None)
+    next_ = request.GET.get('next')
+    next_post = request.POST.get('next')
+    redirect_path = next_ or next_post or None
+    if form.is_valid():
+        email = form.cleaned_data.get("email")
+        new_guest_email = GuestEmail.objects.create(email=email)
+        request.session['guest_email_id'] = new_guest_email.id
+        if is_safe_url(redirect_path,request.get_host()):
+            return redirect(redirect_path)
+        else:
+            return redirect('/register/')
+    return redirect('/register')
 
 def login_form(request):
     form = LoginForm(request.POST or None)
@@ -43,13 +60,13 @@ User = get_user_model()
 def register_form(request):
     form = RegisterForm(request.POST or None)
     if form.is_valid():
-        print(form.cleaned_data)
-        username = form.cleaned_data.get("username")
-        email = form.cleaned_data.get("email")
-        password = form.cleaned_data.get("password")
-        password2 = form.cleaned_data.get("password2")
-        new_user = User.objects.create_user("username","email","password")
-        print("new_user")
+        # print(form.cleaned_data)
+        # username = form.cleaned_data.get("username")
+        # email = form.cleaned_data.get("email")
+        # password = form.cleaned_data.get("password")
+        # password2 = form.cleaned_data.get("password2")
+        # new_user = User.objects.create_user("username","email","password")
+        # print("new_user")
         form.save()
         messages.success(request, 'Form submission successful')
         return HttpResponseRedirect('/')

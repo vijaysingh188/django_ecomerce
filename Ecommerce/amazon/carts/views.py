@@ -3,7 +3,8 @@ from . models import Cart
 from products.models import Product
 from orders.models import Order
 from billing.models import BillingProfile
-from accounts.forms import LoginForm
+from accounts.forms import LoginForm,GuestEmailForm
+from accounts.models import GuestEmail
 
 
 #  Create your views here.
@@ -41,15 +42,20 @@ def checkout_home(request):
 
     user = request.user
     login_form = LoginForm()
+    guest_form = GuestEmailForm()
+    guest_email_id = request.session.get("guest_email_id")
     billing_profile = None
     if user.is_authenticated():
-
         billing_profile,billing_profile_create = BillingProfile.objects.get_or_create(user=user,email=user.email)
 
+    elif guest_email_id is not None:
+        guest_email_obj = GuestEmail.objects.get(id=guest_email_id)
+        billing_profile, billing_guest_profile_create = BillingProfile.objects.get_or_create(email=guest_email_obj.email)
     context = {
         'object':order_obj,
         'billing_profile': billing_profile,
         'login_form': login_form,
+        'guest_form':guest_form
     }
     print(billing_profile,'billing_profile')
     return render(request,'carts/checkout_home.html',context)

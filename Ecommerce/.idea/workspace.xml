@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c68a30c2-348a-450b-8f50-95fba2f90086" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/amazon/accounts/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/templates/accounts/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/amazon/amazon/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/amazon/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/templates/accounts/guest_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/templates/accounts/guest_register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/templates/accounts/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/templates/accounts/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/templates/accounts/snippets/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/templates/accounts/snippets/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/amazon/amazon/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/amazon/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/amazon/carts/templates/carts/checkout_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/carts/templates/carts/checkout_home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/amazon/carts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/carts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/amazon/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/amazon/db.sqlite3" afterDir="false" />
@@ -24,6 +31,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1cWxbaZY2KAsQtFDt9SEecBUIXv" />
   <component name="ProjectViewState">
@@ -76,6 +84,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1593464040181" />
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593469920962">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="492" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1593469920962" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590669509696">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

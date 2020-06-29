@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from products.views import (home,about,contact,ProductListView,product_detail_view,ProductdetailSlugView)
-from accounts.views import (login_form,register_form,logout_request)
+from accounts.views import (login_form,register_form,logout_request,guest_register_view)
 
 
 
@@ -26,12 +26,16 @@ urlpatterns = [
     url(r'^$',home,name="home"),
     url(r'^about/',about,name="about"),
     url(r'^contact/',contact,name="contact"),
+
     url(r'^login/',login_form,name="login"),
+    url(r'^register/guest_register/',guest_register_view,name="guest_register"),
     url(r'logout/',logout_request,name="logout"),
     url(r'^register/',register_form,name="register"),
+
     url(r'^products/',include("products.urls",namespace="products")),
     url(r'^search/',include("search.urls",namespace="search")),
     url(r'^cart/',include("carts.urls",namespace="cart")),
+
     url(r'^admin/', admin.site.urls),
 ]
 if settings.DEBUG:
